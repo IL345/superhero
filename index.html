@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.superhero {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+#superheroImage {
+    width: 200px;
+    transition: transform 1s ease-in-out;
+}
+
+@keyframes flying {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Superhero Animation</h1>
+        <div class="superhero">
+            <img src="C:\Users\User01\Downloads\batman-removebg-preview.png" alt="Superhero" id="superheroImage">
+        </div>
+        <button onclick="animateSuperhero()">Animate Superhero</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function animateSuperhero() {
+    const superhero = document.getElementById('superheroImage');
+    superhero.style.animation = 'flying 1s ease-in-out';
+    
+    // Menghapus animasi setelah selesai agar bisa dimainkan lagi
+    superhero.addEventListener('animationend', () => {
+        superhero.style.animation = '';
+    });
+}
+
+    </script>
+</body>
+</html>
